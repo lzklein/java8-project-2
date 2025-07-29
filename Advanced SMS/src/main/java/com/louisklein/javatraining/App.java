@@ -17,9 +17,10 @@ public class App {
         List<Student> students = new ArrayList<>();
         StudentDAO studentDAO = new StudentDAO();
 
+//        data import, using sample data instead (no data file)
 //        FileImporter.importStudents("data.txt", studentDAO);
 
-//        sample data
+//        sample data for project
         Student s1 = new Student("Alice", 20, "alice@example.com", 10);
         Student s2 = new Student("Bob", 21, "bob@example.com", 10);
         Student s3 = new Student("Charlie", 19, "charlie@example.com", 11);

@@ -9,23 +9,6 @@ import java.util.List;
 
 public class StudentDAO {
 
-    public void createTable() {
-        String sql = """
-            CREATE TABLE IF NOT EXISTS students (
-                id INT PRIMARY KEY AUTO_INCREMENT,
-                name VARCHAR(100),
-                age INT,
-                email VARCHAR(100),
-                grade INT
-            )
-        """;
-        try (Statement stmt = DatabaseConnection.getConnection().createStatement()) {
-            stmt.execute(sql);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
     public void addStudent(Student student) {
         String sql = "INSERT INTO students (name, age, email, grade) VALUES (?, ?, ?, ?)";
         try (PreparedStatement stmt = DatabaseConnection.getConnection()
@@ -48,7 +31,7 @@ public class StudentDAO {
         }
     }
 
-
+//  unused, basic crud
     public void updateStudent(Student student) {
         String sql = "UPDATE students SET name=?, age=?, email=?, grade=? WHERE id=?";
         try (PreparedStatement stmt = DatabaseConnection.getConnection().prepareStatement(sql)) {
