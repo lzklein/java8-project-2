@@ -19,7 +19,7 @@ public class DatabaseInitializer {
                 );
             """;
 
-//          Teacher table mentioned, unused?
+//          Teacher table mentioned, unused
             String createTeachersTable = """
                 CREATE TABLE IF NOT EXISTS teachers (
                     id INT AUTO_INCREMENT PRIMARY KEY,
