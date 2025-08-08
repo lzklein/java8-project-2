@@ -1,0 +1,3 @@
+Robert,20,alice@example.com,10
+Steven,21,bob@example.com,10
+Janet,19,charlie@example.com,11

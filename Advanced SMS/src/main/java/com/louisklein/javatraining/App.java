@@ -14,21 +14,21 @@ public class App {
     public static void main(String[] args) throws SQLException, IOException {
         DatabaseInitializer.initialize();
 
-        List<Student> students = new ArrayList<>();
+//        List<Student> students = new ArrayList<>();
         StudentDAO studentDAO = new StudentDAO();
 
 //        data import, using sample data instead (no data file)
-//        FileImporter.importStudents("data.txt", studentDAO);
+        List<Student> students = FileImporter.importStudents("data.txt", studentDAO);
 
 //        sample data for project
-        Student s1 = new Student("Alice", 20, "alice@example.com", 10);
-        Student s2 = new Student("Bob", 21, "bob@example.com", 10);
-        Student s3 = new Student("Charlie", 19, "charlie@example.com", 11);
-        students.addAll(Arrays.asList(s1, s2, s3));
+//        Student s1 = new Student("Alice", 20, "alice@example.com", 10);
+//        Student s2 = new Student("Bob", 21, "bob@example.com", 10);
+//        Student s3 = new Student("Charlie", 19, "charlie@example.com", 11);
+//        students.addAll(Arrays.asList(s1, s2, s3));
 
-        studentDAO.addStudent(s1);
-        studentDAO.addStudent(s2);
-        studentDAO.addStudent(s3);
+//        studentDAO.addStudent(s1);
+//        studentDAO.addStudent(s2);
+//        studentDAO.addStudent(s3);
 
         FileExporter.exportStudents(students, "students.txt");
 
@@ -42,5 +42,6 @@ public class App {
 
         System.out.println("\nMultithreading Output:");
         StudentProcessor.processWithThreads(students);
+
     }
 }
