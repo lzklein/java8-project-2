@@ -17,7 +17,7 @@ public class App {
 //        List<Student> students = new ArrayList<>();
         StudentDAO studentDAO = new StudentDAO();
 
-//        data import, using sample data instead (no data file)
+//        data import
         List<Student> students = FileImporter.importStudents("data.txt", studentDAO);
 
 //        sample data for project
